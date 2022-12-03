@@ -1,0 +1,30 @@
+{
+    "name": "Advent of Code 2022",
+    "image": "elixir:latest",
+    "runArgs": [
+        "--name=advent-of-code-2022"
+    ],
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "jakebecker.elixir-ls"
+            ]
+        }
+    },
+
+    // Configure container-specific features.
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils": {}
+    },
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "mix local.hex --force && mix local.rebar --force && mix deps.get",
+
+    // Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "vscode"
+}
