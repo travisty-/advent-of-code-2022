@@ -5,7 +5,12 @@ defmodule AdventOfCode.Day01 do
     |> Enum.max()
   end
 
-  def part2(_args) do
+  def part2(args) do
+    args
+    |> parse_inventory()
+    |> Enum.sort(:desc)
+    |> Enum.take(3)
+    |> Enum.sum()
   end
 
   defp parse_inventory(items) do
