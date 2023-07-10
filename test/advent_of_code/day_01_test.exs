@@ -3,12 +3,11 @@ defmodule AdventOfCode.Day01Test do
 
   import AdventOfCode.Day01
 
-  @tag :skip
   test "part1" do
     input = AdventOfCode.Input.get!(1, 2022)
     result = part1(input)
 
-    assert result
+    assert result == 68292
   end
 
   @tag :skip
