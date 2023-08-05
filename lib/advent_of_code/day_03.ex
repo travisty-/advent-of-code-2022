@@ -1,15 +1,26 @@
 defmodule AdventOfCode.Day03 do
   def part1(args) do
     args
-    |> String.split("\n", trim: true)
-    |> Stream.map(&String.to_charlist/1)
+    |> get_rucksacks()
     |> Stream.map(&split_compartments/1)
     |> Stream.map(&find_intersection/1)
     |> Stream.map(&prioritize/1)
     |> Enum.sum()
   end
 
-  def part2(_args) do
+  def part2(args) do
+    args
+    |> get_rucksacks()
+    |> Stream.chunk_every(3)
+    |> Stream.map(&find_intersection/1)
+    |> Stream.map(&prioritize/1)
+    |> Enum.sum()
+  end
+
+  defp get_rucksacks(args) do
+    args
+    |> String.split("\n", trim: true)
+    |> Stream.map(&String.to_charlist/1)
   end
 
   defp split_compartments(items), do: Stream.chunk_every(items, div(length(items), 2))
