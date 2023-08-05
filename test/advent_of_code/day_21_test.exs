@@ -5,7 +5,7 @@ defmodule AdventOfCode.Day21Test do
 
   @tag :skip
   test "part1" do
-    input = nil
+    input = AdventOfCode.Input.get!(21, 2022)
     result = part1(input)
 
     assert result
@@ -13,7 +13,7 @@ defmodule AdventOfCode.Day21Test do
 
   @tag :skip
   test "part2" do
-    input = nil
+    input = AdventOfCode.Input.get!(21, 2022)
     result = part2(input)
 
     assert result
